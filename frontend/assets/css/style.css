@@ -1,0 +1,120 @@
+body {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    margin: 25px 30px;
+}
+
+.table-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 10px;
+    z-index: 9999;
+    background: white;
+    padding: 20px;
+}
+
+.table-nav button.reset-button {
+    border-radius: 5px;
+    padding: 5px 15px;
+    width: auto;
+    border: 1px solid #607D8B;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.table-search input,
+.table-search:focus-visible,
+.table-search::placeholder {
+    border: none;
+    border-bottom: 1px solid #607D8B;
+    outline: none;
+    font-size: 14px;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+
+.table-container {
+    width: 100%;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+    max-height: max-content;
+    margin-top: 80px;
+}
+
+.table-container .grid-table .grid-table-header {
+    /* column-gap: 2px;
+    row-gap: 2px; */
+    background: whitesmoke;
+    font-size: 16px;
+    font-weight: bold;
+    border-width: 1px 1px .5px 1px;
+    border-style: solid;
+    border-color: #607D8B;
+    padding: 15px;
+    text-align: justify;
+    min-width: max-content;
+}
+
+.table-container #table-body .grid-table-body {
+    /* column-gap: 2px;
+    row-gap: 2px; */
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: #607D8B;
+    padding: 15px;
+    text-align: justify;
+    min-width: max-content;
+}
+
+.table-container #loading {
+    text-align: center;
+    padding: 10px 0;
+}
+
+#loading {
+    display: none;
+    font-size: 16px;
+    color: #607D8B;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+.table-container .grid-table img {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .table-container .grid-table {
+        font-size: 12px !important;
+    }
+
+    .table-container .grid-table img {
+        width: 10px !important;
+    }
+
+    /* .table-container {
+        width: max-content;
+    } */
+}
