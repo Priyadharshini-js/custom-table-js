@@ -1,0 +1,20 @@
+// Fixed or Done (Already Implemented in the code)
+
+// 1. Restructured the code for better readability
+// 2. Added comments for better understanding
+// 3. Custom css applied for better table styling
+// 4. Dynamically rendering header in JS, (was initially hardcoded in HTML)
+// 5. Implemented Custom cell rendering and scrollable table with multiple headers
+// 6. Replaced displayUsers function with displayBufferedUsers for virtual scrolling and DOM rendering
+// 7. Instead of showing all users' height, I render fetching data height dynamically
+// 8. Replaced hardcoded column widths with dynamic widths based on column data
+// 9. Handled empty table state with "No users found" message when filtering or searching for users
+// 10.Implemented buffer size for virtual scrolling
+// 11.Implemented search funtionality by name, age and rollno
+
+
+// Issues yet to be fixed
+
+// 1. Need to add error handling with a proper message when data fetching fails
+// 2. Need to toggle a loading indicator using loading.style.display during data fetch 
+
