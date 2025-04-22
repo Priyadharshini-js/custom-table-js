@@ -6,7 +6,9 @@ import {
     handleScroll,
     setupSorting,
     resetTable
-} from "../js/script.js"
+} from "./tableComponentRender.js"
+
+let tableBodyRef;
 
 function init() {
     renderTableHeader();
