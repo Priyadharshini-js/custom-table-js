@@ -1,5 +1,5 @@
 body {
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 0;
     margin: 0;
 }
@@ -19,7 +19,7 @@ section {
     right: 10px;
     z-index: 9999;
     background: white;
-    padding: 20px;
+    padding: 20px 20px 5px 20px;
 }
 
 .table-nav button.reset-button {
@@ -50,9 +50,13 @@ section {
     margin-top: 80px;
 }
 
+#table-body {
+    overflow-y: scroll;
+    height: 500px !important;
+}
+
+
 .table-container .grid-table .grid-table-header {
-    /* column-gap: 2px;
-    row-gap: 2px; */
     background: whitesmoke;
     font-size: 16px;
     font-weight: bold;
@@ -64,9 +68,7 @@ section {
     min-width: max-content;
 }
 
-.table-container #table-body .grid-table-body {
-    /* column-gap: 2px;
-    row-gap: 2px; */
+.table-container #table-body .grid-table-bodyRows {
     border-width: 0px 1px 1px 1px;
     border-style: solid;
     border-color: #607D8B;
@@ -77,6 +79,18 @@ section {
     right: 0;
     left: 0;
 }
+
+.table-container #table-body .grid-table-body {
+
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: #607D8B;
+    padding: 15px;
+    text-align: justify;
+    min-width: max-content;
+    text-align: center;
+}
+
 
 .table-container #loading {
     text-align: center;
@@ -122,7 +136,5 @@ section {
         width: 10px !important;
     }
 
-    /* .table-container {
-        width: max-content;
-    } */
+
 }

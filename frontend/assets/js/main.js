@@ -1,21 +1,24 @@
 import {
-    fetchData,
-    renderTableHeader,
-    displayBufferedUsers,
-    handleSearch,
-    handleScroll,
-    setupSorting,
-    resetTable
+    TableComponent,
 } from "./tableComponentRender.js"
+import { columns } from "../config/columnConfig.js";
 
-let tableBodyRef;
+// base url for fetching data
+const BASE_URL = "http://localhost:3000/users";
 
+export async function fetchUsers() {
+    const response = await fetch(BASE_URL);
+    if (!response.ok) {
+        throw new Error("Network response was not ok");
+    }
+    return await response.json();
+}
+
+//initializing table
 function init() {
-    renderTableHeader();
-    fetchData().then(setupSorting);
-    resetTable();
+    const tableContainer = document.querySelector('.table-container');
+    TableComponent(tableContainer, columns, fetchUsers);
 
-    document.getElementById("resetButton").addEventListener("click", resetTable);
 }
 
 document.addEventListener('DOMContentLoaded', init);
