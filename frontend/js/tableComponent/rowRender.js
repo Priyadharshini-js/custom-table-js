@@ -40,29 +40,29 @@ export function displayBufferedUsers() {
         tableBodyRef.appendChild(wrapper);
     }
 
-    const visibleHeight = tableBodyRef.offsetHeight; //offset clientHeight
+    const visibleHeight = tableBodyRef.offsetHeight; //offset clientHeight, visible part of the table is.
     let VISIBLE_ROW_COUNT = Math.ceil(visibleHeight / ROW_HEIGHT) + BUFFER_SIZE; //dom count
 
 
     const activeData = tableState.filteredData || tableState.allDatas;
-
     if (activeData.length === 0) return;
 
 
-    const scrollTop = tableBodyRef.scrollTop;
-    const firstVisibleIndex = Math.floor(scrollTop / ROW_HEIGHT);
+    const scrollTop = tableBodyRef.scrollTop;  //how far the table is scrolled down
+    const firstVisibleIndex = Math.floor(scrollTop / ROW_HEIGHT); //view port in the table
     const startIndex = Math.max(0, firstVisibleIndex - BUFFER_SIZE);
     const endIndex = Math.min(activeData.length, firstVisibleIndex + VISIBLE_ROW_COUNT);
 
 
     const visibleData = activeData.slice(startIndex, endIndex);  //rows currently in the viewport, which is rendered in the DOM.
+    // only the rows we need to show
 
     // Get all current rows
     const existingRows = Array.from(wrapper.children);
 
     let rowIndex = 0;
 
-    // Translate wrapper instead of positioning individual rows
+    // Translate wrapper instead of positioning individual rows, visually moves the rows
     wrapper.style.transform = `translateY(${startIndex * ROW_HEIGHT}px)`;
 
     // Reuse existing rows
@@ -104,9 +104,9 @@ export function displayBufferedUsers() {
 
 }
 
-//render userRow function
+//render dataRow function, creates a new row from scratch.
 function renderUserRow(item, index) {
-    const tableBody = document.getElementById('table-body');
+    // const tableBody = document.getElementById('table-body');
 
 
     const row = document.createElement('div');

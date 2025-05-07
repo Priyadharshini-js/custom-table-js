@@ -18,6 +18,7 @@ export function handleSearch(e) {
         noResultMessage.remove();
     }
 
+    //search box is empty
     if (!searchTerm) {
         tableState.filteredData = null;
         tableState.currentIndex = 0;

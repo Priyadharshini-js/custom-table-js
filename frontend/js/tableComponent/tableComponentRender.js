@@ -57,7 +57,7 @@ export const handleScroll = throttle(() => {
     const tableBodyHeight = tableBody.offsetHeight; ///offset clientHeight, The visible height of the table (viewport)
     const tableBodyContentHeight = tableBody.scrollHeight; //total height of the content inside the table
 
-    if (scrollTop + tableBodyHeight >= tableBodyContentHeight - 100) { //hw far user has scrolled
+    if (scrollTop + tableBodyHeight >= tableBodyContentHeight - 100) { //hw far user has scrolled down from th bottom and triggers more rows to shows
         if (!tableState.isFiltering && tableState.currentIndex < tableState.allDatas.length) {
             displayBufferedUsers(tableState);
         }
