@@ -10,10 +10,46 @@
 // 8.Implemented buffer size for virtual scrolling
 // 9.Implemented search funtionality by name, age and rollno
 
+-*--*---*----*-----*------*-------*--------*--------*--------*
 
-// Issues yet to be fixed
+// 1. Code Refactor structure
 
-// 10. Need to add error handling with a proper message when data fetching fails
-// 11. Need to toggle a loading indicator using loading.style.display during data fetch 
-// 12. when the data comes empty, need to show error message of empty data
+/frontend
+ └── assets
+ └── js
+ └── index.html
+
+/assets
+   └── css
+   └── images
+  
+/js
+  └── config
+  └── tableComponent
+  └── utils
+
+ /tableComponent
+      └── main.js
+      └── apiFetch.js
+      └── tableComponentRender.js
+      └── renderTableHeader.js
+      └── rowRender.js
+      └── handleSearch.js
+      └── resetTable.js
+      └── setupSorting.js
+  
+
+ /config
+      └── columnConfig.js
+ 
+
+ /utils
+      └── helper.js  (debounce, throttle, sortData)
+
+/index.html
+
+// 2. Custom search Implemented.
+// 3. Scroll from overall container to body to make the header sticky.
+// 4. instead postioning the divs in row, used now transform - translate to make the performace optimized.
+
 
